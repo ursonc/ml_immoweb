@@ -36,11 +36,11 @@ ml_immoweb/
 
 The model's performance was evaluated using several metrics to assess its predictive accuracy:
 
-    R² Score: The XGB model achieved an R² score of 0.7426, explaining approximately 74% of the variance in property prices.
+- R² Score: The XGB model achieved an R² score of 0.7426, explaining approximately 74% of the variance in property prices.
 
-    Mean Absolute Error (MAE) (€42,079.76): On average, predictions deviate from actual prices by €42,079.76. This error is relatively high and reflects areas where model precision can improve. 
+- Mean Absolute Error (MAE) (€42,079.76): On average, predictions deviate from actual prices by €42,079.76. This error is relatively high and reflects areas where model precision can improve. 
    
-    Median Absolute Error (€30,489.45): The median error, or the midpoint of all errors, is €30,489.45, slightly lower than the MAE. This can suggest that some predictions have more extreme errors, skewing the mean.
+- Median Absolute Error (€30,489.45): The median error, or the midpoint of all errors, is €30,489.45, slightly lower than the MAE. This can suggest that some predictions have more extreme errors, skewing the mean.
 
 ## Comparison of Actual vs. Predicted Property Prices (n=10)
 Table 1: Comparison of Actual vs. Predicted Property Prices
