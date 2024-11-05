@@ -9,9 +9,9 @@ This project aims to predict a price for properties (houses/appartments) in the 
 ```
 ml_immoweb/
 ├── Data/
-│   ├── Raw/
-│   ├── Preprocessed/
 │   ├── Comparison/
+│   ├── Preprocessed/
+│   ├── Raw/
 ├── Notebooks/
 ├── scripts/
 │   ├── train.py
