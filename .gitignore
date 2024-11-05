@@ -4,7 +4,48 @@ __pycache__/
 *$py.class
 
 # C extensions
+*.soµ
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore data files
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore dependency directories
+node_modules/
+venv/
+env/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.o
 *.so
+*.out
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+\venv
 
 # Distribution / packaging
 .Python
@@ -160,3 +201,5 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+.pytest_cache
+.ipynb_checkpoints
