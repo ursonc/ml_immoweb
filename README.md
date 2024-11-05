@@ -29,7 +29,7 @@ ml_immoweb/
 
 ## Model Details
 
-- **Tested Models**: Multiple Linear Regression, XGBoost
+- **Tested Models**: Multiple Linear Regression, Random Forest Model, XGBoost
 - **Chosen Model**: XGBoost was selected for its balance of performance and interpretability.
 
 ## Performance
