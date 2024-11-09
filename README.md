@@ -1,12 +1,15 @@
-# Immo Eliza - Real Estate Price Prediction ML Project
 
-## Project Context
+# Immo Eliza - Real Estate Price Prediction
 
-This project aims to predict a price for properties (houses/appartments) in the Belgian real estate market based on a range of features.
+> **A Machine Learning Project to Predict Property Prices in the Belgian Market**
 
-## Project Structure:
+This project aims to predict prices for residential properties (houses and apartments) in Belgium based on a range of property features. Separate models were trained for apartments and houses to improve prediction accuracy based on property type.
 
-```
+---
+
+## 📂 Project Structure
+
+```plaintext
 ml_immoweb/
 ├── Data/
 │   ├── Comparison/
@@ -21,63 +24,98 @@ ml_immoweb/
 ├── README.md
 ```
 
-## Data
+## 📊 Data Overview
 
-- **Model**: Trained on property listings in Belgium, focusing on houses and appartments. 
-- **Target**: Listing price of each property.
-- **Features**: Includes number of beedroms, number of facades, construction year, property subtype, zip_code, total living area, dummy features (garden/terrace/) etc.  
+- **Scope**: Belgian residential property listings, focusing on houses and apartments.
+- **Target Variable**: Listing price.
+- **Features**: A variety of property characteristics, including the number of bedrooms, number of facades, construction year, zip code, total living area, dummy variables (garden, terrace, etc.).
 
-## Model Details
+---
 
-- **Tested Models**: Multiple Linear Regression, Random Forest Model, XGBoost
-- **Chosen Model**: XGBoost was selected for its balance of performance and interpretability.
+## 🚀 Model Details
 
-## Performance
+- **Explored Models**: Multiple Linear Regression, Random Forest, XGBoost.
+- **Final Model**: XGBoost was selected for its balance of performance and interpretability, providing a reliable prediction model for this real estate data.
 
-The model's performance was evaluated using several metrics to assess its predictive accuracy:
+---
 
-- R² Score: The XGB model achieved an R² score of 0.7426, explaining approximately 74% of the variance in property prices.
+## 📈 Performance Metrics
 
-- Mean Absolute Error (MAE) (€42,079.76): On average, predictions deviate from actual prices by €42,079.76. This error is relatively high and reflects areas where model precision can improve. 
-   
-- Median Absolute Error (€30,489.45): The median error, or the midpoint of all errors, is €30,489.45, slightly lower than the MAE. This can suggest that some predictions have more extreme errors, skewing the mean.
+The XGBoost model’s performance was assessed using several metrics:
 
-## Comparison of Actual vs. Predicted Property Prices (n=10)
-Table 1: Comparison of Actual vs. Predicted Property Prices
+- **R² Score**: 0.7426 – Explains approximately 74% of the variance in property prices.
+- **Mean Absolute Error (MAE)**: €42,079.76 – Average deviation from actual prices.
+- **Median Absolute Error**: €30,489.45 – Indicates some extreme errors that skew the mean.
 
-```go
-   Actual Price  Predicted Price  Absolute Error  Percentage Error
-0      345000.0    324148.375000    20851.625000          6.043949
-1      399000.0    432871.906250    33871.906250          8.489200
-2      570000.0    455934.906250   114065.093750         20.011420
-3      479000.0    428170.968750    50829.031250         10.611489
-4      373673.0    392023.875000    18350.875000          4.910945
-5      439000.0    506548.250000    67548.250000         15.386845
-6      399000.0    502941.531250   103941.531250         26.050509
-7      375000.0    331482.781250    43517.218750         11.604592
-8      170000.0    137094.484375    32905.515625         19.356186
-9      295000.0    215162.250000    79837.750000         27.063644
+### Sample Comparison of Actual vs. Predicted Prices (n=10)
+
+| Actual Price | Predicted Price | Absolute Error | Percentage Error |
+|--------------|-----------------|----------------|------------------|
+| 345,000      | 324,148         | 20,852        | 6.04%           |
+| 399,000      | 432,872         | 33,872        | 8.49%           |
+| 570,000      | 455,935         | 114,065       | 20.01%          |
+| 479,000      | 428,171         | 50,829        | 10.61%          |
+| 373,673      | 392,024         | 18,351        | 4.91%           |
+| 439,000      | 506,548         | 67,548        | 15.39%          |
+| 399,000      | 502,942         | 103,942       | 26.05%          |
+| 375,000      | 331,483         | 43,517        | 11.60%          |
+| 170,000      | 137,094         | 32,906        | 19.36%          |
+| 295,000      | 215,162         | 79,838        | 27.06%          |
+
+- **Insights**: Higher-priced properties have larger absolute errors but lower percentage errors, while smaller or lower-priced properties tend to have higher percentage errors.
+
+---
+
+## ⚙️ Usage Guide
+
+### Installation
+
+To install dependencies, use the following command:
+
+```bash
+pip install -r requirements.txt
 ```
-Percentage Errors: Smaller properties or lower-priced listings tend to have higher percentage errors, as seen with 30.93% for row 4 and 32.83% for row 10. Higher-priced properties may have relatively lower percentage errors but higher absolute errors.
 
-## Usage Guide:
+### Training the Model
 
-### Dependencies:
+Use `train.py` to train the model:
 
-Install dependencies from `requirements.txt`. Main libraries: `pandas`, `scikit-learn`, `joblib`, `numpy`, `xgboost`.
+```bash
+python scripts/train.py
+```
 
-### Training the Model:
+### Generating Predictions
 
-Run `train.py` to train the model (under construction)
+Generate predictions using `predict.py` with new data in the same format as the training set:
 
-### Generating Predictions:
+```bash
+python scripts/predict.py
+```
 
-Use `predict.py` with new data in the same format as the training set to generate predictions (under construction)
+---
 
-## Limitations and Future Work:
+## 📂 Project Background & Timeline
 
-- Potential enhancements, like addressing multicollinearity or further data enrichment (e.g., macroeconomic indicators).
-- Explore more advanced models and feature engineering / importance techniques.
-- Refining the feature set (e.g., adding location granularity, time trends)
-- Handling outliers more robustly
-- Experimenting with log transformation of target and numerical variables to mitigate skewed data.
+This is the third phase of a four-phase project to create a complete ML pipeline for predicting residential property prices. T
+his project phase took one week to complete in October 2024. 
+
+The project was completed as part of my 7-month AI & Data Science bootcamp at BeCode in Ghent, Belgium.
+
+## 🔍 Limitations & Future Work
+
+- **Data Enhancements**: Add macroeconomic indicators, time trends, and additional location granularity.
+- **Feature Engineering**: Address multicollinearity and further optimize feature importance techniques.
+- **Robust Outlier Handling**: Experiment with transformations to mitigate skewed data.
+- **Advanced Modeling**: Explore alternative models and further tuning options to improve MAE and R² scores.
+
+---
+
+## 📊 Performance Summary
+The XGBoost model was chosen for its efficient handling of complex patterns in data. 
+
+
+## 📫 Contact
+
+For questions or further information, please reach out to [Urson Callens](https://www.github.com/ursonc).
+
+---
