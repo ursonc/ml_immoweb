@@ -59,7 +59,7 @@ isoduration==20.11.0
 isort==5.13.2
 jedi==0.19.1
 jieba3k==0.35.1
-Jinja2==3.1.4
+Jinja2==3.1.5
 joblib==1.4.2
 json5==0.9.25
 jsonpointer==3.0.0
